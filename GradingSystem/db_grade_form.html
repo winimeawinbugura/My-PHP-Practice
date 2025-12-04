@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grading System with Database</title>
+</head>
+<body>
+    <h2>Student Grading System (Database Version)</h2>
+    <form action="db_process_grades.php" method="POST">
+        <label>Exam 1 Score:</label>
+        <input type="number" name="score1" required><br><br>
+
+        <label>Exam 2 Score:</label>
+        <input type="number" name="score2" required><br><br>
+
+        <label>Exam 3 Score:</label>
+        <input type="number" name="score3" required><br><br>
+
+        <h3>Enter 5 Subject Scores</h3>
+        <?php for ($i=1; $i<=5; $i++): ?>
+            Subject <?= $i ?>: 
+            <input type="number" name="subject[]" required><br><br>
+        <?php endfor; ?>
+
+        <button type="submit">Submit Grades</button>
+    </form>
+
+    <br><hr>
+
+    <a href="view_students.php">View All Stored Students</a>
+</body>
+</html>
